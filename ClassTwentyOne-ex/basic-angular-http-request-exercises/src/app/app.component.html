@@ -1,0 +1,31 @@
+<h1>My Movies</h1>
+<h3>Add Movies</h3>
+<button type="submit" class="btn btn-primary" [disabled]="!myMovies.form.valid">add Movie</button>
+<hr>
+<div>
+<div>
+<form (ngSubmit)="onSubmit()" #myMovies="ngForm">
+  <div class="form-group">
+<label for="title">Title</label>
+<h5></h5>
+  <input type="text" class="form-control" id="title"
+  required
+  [(ngModel)]="movie.title" name="title"
+  #title="ngModel">
+</div>
+<h1></h1>
+<div>
+<label for="genre">Genre</label>
+<h5></h5>
+<input type="text" class="form-control" id="genre"
+required
+[(ngModel)]="movie.genre" name="genre"
+#genre="ngModel">
+</div>
+
+<div>
+  <hr>
+  <h3>My Movie {{(title)(genre)}}</h3>
+</div>
+</form>
+</div>
